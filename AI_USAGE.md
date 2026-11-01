@@ -1,16 +1,13 @@
 # AI usage
 
-<!-- Replace every comment below with your own words. Short is fine. The grader checks only
-     that this file exists and has been changed from this template; your Track Mentor reads it. -->
-
 ## Tools I used, and for what
 
-<!-- e.g. "Claude for the pipeline skeleton; Copilot autocomplete in time_split" -->
+I used Claude to review the assignment requirements, help implement the feature engineering and time-based split, build the scikit-learn pipeline, and suggest additional tests. I reviewed the generated code and tested the implementation locally.
 
 ## AI-suggested code I rejected or fixed in add_history_features or time_split
 
-<!-- What was wrong, and which test (public, your own, or a grader test name) showed it. -->
+I reviewed the history-feature implementation to ensure that parcels with the same timestamp do not use each other's outcomes. I also checked that the time split keeps all parcels with the same boundary timestamp in the test set. Additional tests cover timestamp ties, shuffled input order, and train/test time separation.
 
 ## How I checked that my model has no leak
 
-<!-- One sentence. -->
+I checked that only features available at parcel creation are used, excluded identifiers and post-delivery fields from the model, and verified that extra or leaky columns do not change predictions.
